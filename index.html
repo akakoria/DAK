@@ -134,629 +134,74 @@
                 </div>
             </section>
 
-            <!-- Brief research overview on the Home tab -->
-<section class="bg-white py-12 sm:py-16 border-t border-gray-200">
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        <!-- SECTION INTRODUCTION -->
-
-        <div class="max-w-3xl mb-10">
-
-            <p class="text-sm font-semibold uppercase tracking-widest
-                      text-emerald-800 mb-3">
-                Research & Innovation
-            </p>
-
-            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900
-                       tracking-tight mb-4">
-                Research Focus Areas
-            </h2>
-
-            <p class="text-gray-600 text-base leading-relaxed">
-                Our research integrates advanced materials manufacturing,
-                environmental engineering, energy safety, and thermal sciences
-                to address challenges in industrial pollution control,
-                sustainable resource recovery, and next-generation materials.
-            </p>
-
-        </div>
-
-
-        <!-- RESEARCH CARDS -->
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-
-            <!-- AREA 1: ENVIRONMENTAL POLLUTION MITIGATION -->
-
-            <article class="bg-gray-50 rounded-2xl border border-gray-200
-                            p-6 sm:p-7 hover:shadow-lg hover:border-emerald-200
-                            transition-all duration-300">
-
-                <div class="flex items-start gap-4 mb-5">
-
-                    <div class="w-12 h-12 shrink-0 rounded-xl bg-emerald-100
-                                flex items-center justify-center text-2xl">
-                        🌱
+            <!-- HOME: concise research snapshot; full details are in the Research tab -->
+            <section class="bg-white py-12 sm:py-16 border-t border-gray-200">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5 mb-8">
+                        <div class="max-w-3xl">
+                            <p class="text-sm font-semibold uppercase tracking-widest text-emerald-800 mb-3">At a Glance</p>
+                            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mb-3">Research Focus Areas</h2>
+                            <p class="text-gray-600 leading-relaxed">A snapshot of our work at the intersection of functional materials, environmental protection, and energy safety. Each area features one representative publication; visit the Research tab for the detailed scope, methods, and broader research portfolio.</p>
+                        </div>
+                        <button onclick="switchView('research')" class="shrink-0 inline-flex items-center justify-center gap-2 rounded-lg bg-[#284723] px-5 py-3 text-sm font-semibold text-white hover:bg-emerald-900 transition-colors">Explore Research <span aria-hidden="true">→</span></button>
                     </div>
 
-                    <div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
+                        <!-- HOME AREA 1 -->
+                        <article class="rounded-2xl border border-gray-200 bg-gray-50 p-5 sm:p-6 hover:shadow-md transition-shadow">
+                            <div class="w-11 h-11 rounded-xl bg-emerald-100 flex items-center justify-center text-2xl mb-4" aria-hidden="true">💧</div>
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Environmental Protection</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed mb-4">Materials and process strategies for acid-mist suppression, air filtration, water purification, and contaminant removal.</p>
+                            <div class="border-t border-gray-200 pt-4 mt-auto">
+                                <p class="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-2">Featured article</p>
+                                <a href="https://doi.org/10.1149/1945-7111/ae541e" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-emerald-800 hover:underline">Sulfuric Acid Mist Generation, Calculation and Suppression Mechanism and Methods in Electrowinning: A Review ↗</a>
+                            </div>
+                        </article>
 
-                        <p class="text-xs font-semibold uppercase tracking-wider
-                                  text-emerald-800 mb-1">
-                            Research Area 01
-                        </p>
+                        <!-- HOME AREA 2 -->
+                        <article class="rounded-2xl border border-gray-200 bg-gray-50 p-5 sm:p-6 hover:shadow-md transition-shadow">
+                            <div class="w-11 h-11 rounded-xl bg-amber-100 flex items-center justify-center text-2xl mb-4" aria-hidden="true">🔋</div>
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">EV Battery Fire & Safety</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed mb-4">Research on lithium-ion battery thermal runaway, fire hazards, toxic off-gases, and safer incident response.</p>
+                            <div class="border-t border-gray-200 pt-4 mt-auto">
+                                <p class="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-2">Featured article</p>
+                                <a href="https://doi.org/10.1016/j.jpowsour.2025.237914" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-emerald-800 hover:underline">Comparative Fire Hazards of Lithium-Ion Battery Chemistries: Linking Thermal Behavior, Gas Toxicity, and State-of-Charge to Composite Risk Profiles ↗</a>
+                            </div>
+                        </article>
 
-                        <h3 class="text-xl font-bold text-gray-900">
-                            Environmental Pollution Mitigation
-                        </h3>
+                        <!-- HOME AREA 3 -->
+                        <article class="rounded-2xl border border-gray-200 bg-gray-50 p-5 sm:p-6 hover:shadow-md transition-shadow">
+                            <div class="w-11 h-11 rounded-xl bg-blue-100 flex items-center justify-center text-2xl mb-4" aria-hidden="true">🧬</div>
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Functional Materials & Nanofibers</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed mb-4">Engineering polymer nanocomposites and fibrous structures for high-performance filtration and sustainable applications.</p>
+                            <div class="border-t border-gray-200 pt-4 mt-auto">
+                                <p class="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-2">Featured article</p>
+                                <a href="https://doi.org/10.1016/j.envpol.2026.127659" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-emerald-800 hover:underline">Electroactive PVDF/Ti₃C₂Tₓ MXene-Functionalized Nanofiber Mats for High-Efficiency Submicron Particulate Matter Filtration ↗</a>
+                            </div>
+                        </article>
 
+                        <!-- HOME AREA 4 -->
+                        <article class="rounded-2xl border border-gray-200 bg-gray-50 p-5 sm:p-6 hover:shadow-md transition-shadow">
+                            <div class="w-11 h-11 rounded-xl bg-purple-100 flex items-center justify-center text-2xl mb-4" aria-hidden="true">🔥</div>
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Thermal Engineering & Fire Dynamics</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed mb-4">Exploring heat-transfer performance, thermal processes, fire behaviour, and engineering approaches to improve safety.</p>
+                            <div class="border-t border-gray-200 pt-4 mt-auto">
+                                <p class="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-2">Featured article</p>
+                                <a href="https://doi.org/10.1080/08916152.2021.1919243" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-emerald-800 hover:underline">Enhancement in Pool Boiling Heat Transfer of Ethanol and Nanofluid on a Novel Supersonic Nanoblown Nanofiber-Textured Surface ↗</a>
+                            </div>
+                        </article>
                     </div>
 
-                </div>
-
-
-                <p class="text-sm text-gray-600 leading-relaxed mb-5">
-                    Developing materials and engineering strategies to control
-                    industrial emissions, remove contaminants from air and water,
-                    and improve environmental sustainability.
-                </p>
-
-
-                <div class="flex flex-wrap gap-2 mb-6">
-
-                    <span class="text-xs bg-white border border-gray-200
-                                 rounded-full px-3 py-1.5 text-gray-700">
-                        Acid Mist Suppression
-                    </span>
-
-                    <span class="text-xs bg-white border border-gray-200
-                                 rounded-full px-3 py-1.5 text-gray-700">
-                        Air Filtration
-                    </span>
-
-                    <span class="text-xs bg-white border border-gray-200
-                                 rounded-full px-3 py-1.5 text-gray-700">
-                        Heavy-Metal Removal
-                    </span>
-
-                    <span class="text-xs bg-white border border-gray-200
-                                 rounded-full px-3 py-1.5 text-gray-700">
-                        Wastewater Treatment
-                    </span>
-
-                </div>
-
-
-                <div class="border-t border-gray-200 pt-5">
-
-                    <h4 class="text-sm font-bold text-gray-900 mb-3">
-                        Selected Publications
-                    </h4>
-
-
-                    <ul class="space-y-3 text-sm">
-
-
-                        <li>
-                            <a href="https://doi.org/10.1149/1945-7111/ae541e"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               class="text-emerald-800 hover:underline
-                                      font-medium leading-relaxed">
-
-                                Sulfuric Acid Mist Generation, Calculation and
-                                Suppression Mechanism and Methods in
-                                Electrowinning: A Review ↗
-
-                            </a>
-
-                            <p class="text-xs text-gray-500 mt-1">
-                                Journal of The Electrochemical Society, 2026
-                            </p>
-                        </li>
-
-
-                        <li>
-                            <a href="https://doi.org/10.1007/s40831-025-01297-8"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               class="text-emerald-800 hover:underline
-                                      font-medium leading-relaxed">
-
-                                Optimizing Acid Mist Suppression: Unravelling
-                                Surfactant Effects on Bubble Formation and
-                                Bursting Dynamics in Copper Electrowinning ↗
-
-                            </a>
-
-                            <p class="text-xs text-gray-500 mt-1">
-                                Journal of Sustainable Metallurgy, 2025
-                            </p>
-                        </li>
-
-
-                        <li>
-                            <a href="https://doi.org/10.1016/j.polymer.2020.123333"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               class="text-emerald-800 hover:underline
-                                      font-medium leading-relaxed">
-
-                                Industrially Scalable Chitosan/Nylon-6 Nanofiber-Based
-                                Reusable Adsorbent for Efficient Removal of
-                                Heavy Metal from Water ↗
-
-                            </a>
-
-                            <p class="text-xs text-gray-500 mt-1">
-                                Polymer, 2021
-                            </p>
-                        </li>
-
-
-                        <li>
-                            <a href="https://doi.org/10.1016/j.polymer.2021.124260"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               class="text-emerald-800 hover:underline
-                                      font-medium leading-relaxed">
-
-                                Novel Supersonically Solution-Blown Nanofibers
-                                from Waste PET Bottles for PM0.1–2 Filtration:
-                                From Waste to Pollution Mitigation ↗
-
-                            </a>
-
-                            <p class="text-xs text-gray-500 mt-1">
-                                Polymer, 2021
-                            </p>
-                        </li>
-
-                    </ul>
-
-                </div>
-
-            </article>
-
-
-
-            <!-- AREA 2: EV BATTERY FIRE AND SAFETY -->
-
-            <article class="bg-gray-50 rounded-2xl border border-gray-200
-                            p-6 sm:p-7 hover:shadow-lg hover:border-amber-200
-                            transition-all duration-300">
-
-                <div class="flex items-start gap-4 mb-5">
-
-                    <div class="w-12 h-12 shrink-0 rounded-xl bg-amber-100
-                                flex items-center justify-center text-2xl">
-                        🔋
+                    <div class="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 rounded-2xl bg-emerald-50 border border-emerald-100 p-5 sm:p-6">
+                        <div>
+                            <h3 class="font-bold text-gray-900">Explore the research in detail</h3>
+                            <p class="text-sm text-gray-600 mt-1">Read about the research questions, approaches, and application areas on the dedicated Research page.</p>
+                        </div>
+                        <button onclick="switchView('research')" class="inline-flex items-center gap-2 rounded-lg border border-emerald-800 px-5 py-2.5 text-sm font-semibold text-emerald-900 hover:bg-emerald-100 transition-colors">View Detailed Research <span aria-hidden="true">→</span></button>
                     </div>
-
-                    <div>
-
-                        <p class="text-xs font-semibold uppercase tracking-wider
-                                  text-amber-800 mb-1">
-                            Research Area 02
-                        </p>
-
-                        <h3 class="text-xl font-bold text-gray-900">
-                            EV Battery Fire & Safety
-                        </h3>
-
-                    </div>
-
                 </div>
-
-
-                <p class="text-sm text-gray-600 leading-relaxed mb-5">
-                    Investigating lithium-ion battery failure, thermal runaway,
-                    fire propagation, toxic off-gas generation, and strategies
-                    for improving battery incident response and safety.
-                </p>
-
-
-                <div class="flex flex-wrap gap-2 mb-6">
-
-                    <span class="text-xs bg-white border border-gray-200
-                                 rounded-full px-3 py-1.5 text-gray-700">
-                        Thermal Runaway
-                    </span>
-
-                    <span class="text-xs bg-white border border-gray-200
-                                 rounded-full px-3 py-1.5 text-gray-700">
-                        Battery Fire
-                    </span>
-
-                    <span class="text-xs bg-white border border-gray-200
-                                 rounded-full px-3 py-1.5 text-gray-700">
-                        Toxic Off-Gases
-                    </span>
-
-                    <span class="text-xs bg-white border border-gray-200
-                                 rounded-full px-3 py-1.5 text-gray-700">
-                        Fire Suppression
-                    </span>
-
-                </div>
-
-
-                <div class="border-t border-gray-200 pt-5">
-
-                    <h4 class="text-sm font-bold text-gray-900 mb-3">
-                        Selected Publications
-                    </h4>
-
-
-                    <ul class="space-y-3 text-sm">
-
-
-                        <li>
-                            <a href="https://doi.org/10.1016/j.jpowsour.2025.237914"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               class="text-emerald-800 hover:underline
-                                      font-medium leading-relaxed">
-
-                                Comparative Fire Hazards of Lithium-Ion Battery
-                                Chemistries: Linking Thermal Behavior, Gas Toxicity,
-                                and State-of-Charge to Composite Risk Profiles ↗
-
-                            </a>
-
-                            <p class="text-xs text-gray-500 mt-1">
-                                Journal of Power Sources, 2025
-                            </p>
-                        </li>
-
-
-                        <li>
-                            <a href="https://scholar.google.com/scholar?q=Laboratory+Investigation+of+Various+Extinguishing+Agents+on+Cylindrical+Lithium-Ion+Batteries"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               class="text-emerald-800 hover:underline
-                                      font-medium leading-relaxed">
-
-                                Laboratory Investigation of Various Extinguishing
-                                Agents on Cylindrical Lithium-Ion Batteries ↗
-
-                            </a>
-
-                            <p class="text-xs text-gray-500 mt-1">
-                                Manuscript listed as under revision in the June 2026 CV;
-                                link opens a scholarly search.
-                            </p>
-                        </li>
-
-                    </ul>
-
-                </div>
-
-            </article>
-
-
-
-            <!-- AREA 3: ADVANCED MATERIALS AND NANOFIBERS -->
-
-            <article class="bg-gray-50 rounded-2xl border border-gray-200
-                            p-6 sm:p-7 hover:shadow-lg hover:border-blue-200
-                            transition-all duration-300">
-
-                <div class="flex items-start gap-4 mb-5">
-
-                    <div class="w-12 h-12 shrink-0 rounded-xl bg-blue-100
-                                flex items-center justify-center text-2xl">
-                        🧬
-                    </div>
-
-                    <div>
-
-                        <p class="text-xs font-semibold uppercase tracking-wider
-                                  text-blue-800 mb-1">
-                            Research Area 03
-                        </p>
-
-                        <h3 class="text-xl font-bold text-gray-900">
-                            Advanced Functional Materials
-                        </h3>
-
-                    </div>
-
-                </div>
-
-
-                <p class="text-sm text-gray-600 leading-relaxed mb-5">
-                    Engineering functional polymeric materials, nanofiber
-                    architectures, and nanocomposites using scalable fabrication
-                    approaches for filtration, environmental remediation,
-                    and energy-related applications.
-                </p>
-
-
-                <div class="flex flex-wrap gap-2 mb-6">
-
-                    <span class="text-xs bg-white border border-gray-200
-                                 rounded-full px-3 py-1.5 text-gray-700">
-                        Electrospinning
-                    </span>
-
-                    <span class="text-xs bg-white border border-gray-200
-                                 rounded-full px-3 py-1.5 text-gray-700">
-                        Supersonic Solution Blowing
-                    </span>
-
-                    <span class="text-xs bg-white border border-gray-200
-                                 rounded-full px-3 py-1.5 text-gray-700">
-                        Polymer Nanocomposites
-                    </span>
-
-                    <span class="text-xs bg-white border border-gray-200
-                                 rounded-full px-3 py-1.5 text-gray-700">
-                        Sustainable Materials
-                    </span>
-
-                </div>
-
-
-                <div class="border-t border-gray-200 pt-5">
-
-                    <h4 class="text-sm font-bold text-gray-900 mb-3">
-                        Selected Publications
-                    </h4>
-
-
-                    <ul class="space-y-3 text-sm">
-
-
-                        <li>
-                            <a href="https://doi.org/10.1016/j.envpol.2026.127659"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               class="text-emerald-800 hover:underline
-                                      font-medium leading-relaxed">
-
-                                Electroactive PVDF/Ti₃C₂Tₓ MXene-Functionalized
-                                Nanofiber Mats for High-Efficiency Submicron
-                                Particulate Matter Filtration ↗
-
-                            </a>
-
-                            <p class="text-xs text-gray-500 mt-1">
-                                Environmental Pollution, 2026
-                            </p>
-                        </li>
-
-
-                        <li>
-                            <a href="https://doi.org/10.1016/j.polymer.2022.125121"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               class="text-emerald-800 hover:underline
-                                      font-medium leading-relaxed">
-
-                                Ultrafine Nanofiber-Based High-Efficiency Air Filter
-                                from Waste Cigarette Butts ↗
-
-                            </a>
-
-                            <p class="text-xs text-gray-500 mt-1">
-                                Polymer, 2022
-                            </p>
-                        </li>
-
-
-                        <li>
-                            <a href="https://doi.org/10.1007/s10853-026-13269-8"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               class="text-emerald-800 hover:underline
-                                      font-medium leading-relaxed">
-
-                                Advancements in Fibrous Aerosol Filtration Across
-                                Experimental Analysis, Numerical Modeling,
-                                and Fabrication Technologies ↗
-
-                            </a>
-
-                            <p class="text-xs text-gray-500 mt-1">
-                                Journal of Materials Science, 2026
-                            </p>
-                        </li>
-
-
-                        <li>
-                            <a href="https://doi.org/10.3390/fib6030045"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               class="text-emerald-800 hover:underline
-                                      font-medium leading-relaxed">
-
-                                A Review on Biopolymer-Based Fibers via Electrospinning
-                                and Solution Blowing and Their Applications ↗
-
-                            </a>
-
-                            <p class="text-xs text-gray-500 mt-1">
-                                Fibers, 2018
-                            </p>
-                        </li>
-
-
-                    </ul>
-
-                </div>
-
-            </article>
-
-
-
-            <!-- AREA 4: THERMAL ENGINEERING AND MODELLING -->
-
-            <article class="bg-gray-50 rounded-2xl border border-gray-200
-                            p-6 sm:p-7 hover:shadow-lg hover:border-purple-200
-                            transition-all duration-300">
-
-                <div class="flex items-start gap-4 mb-5">
-
-                    <div class="w-12 h-12 shrink-0 rounded-xl bg-purple-100
-                                flex items-center justify-center text-2xl">
-                        🔥
-                    </div>
-
-                    <div>
-
-                        <p class="text-xs font-semibold uppercase tracking-wider
-                                  text-purple-800 mb-1">
-                            Research Area 04
-                        </p>
-
-                        <h3 class="text-xl font-bold text-gray-900">
-                            Thermal Engineering & Fire Dynamics
-                        </h3>
-
-                    </div>
-
-                </div>
-
-
-                <p class="text-sm text-gray-600 leading-relaxed mb-5">
-                    Studying heat transfer, thermal degradation, flame behavior,
-                    aerosol transport, and coupled physical processes to improve
-                    material performance, industrial safety, and fire-risk assessment.
-                </p>
-
-
-                <div class="flex flex-wrap gap-2 mb-6">
-
-                    <span class="text-xs bg-white border border-gray-200
-                                 rounded-full px-3 py-1.5 text-gray-700">
-                        Heat Transfer
-                    </span>
-
-                    <span class="text-xs bg-white border border-gray-200
-                                 rounded-full px-3 py-1.5 text-gray-700">
-                        Thermal Analysis
-                    </span>
-
-                    <span class="text-xs bg-white border border-gray-200
-                                 rounded-full px-3 py-1.5 text-gray-700">
-                        Fire Dynamics
-                    </span>
-
-                    <span class="text-xs bg-white border border-gray-200
-                                 rounded-full px-3 py-1.5 text-gray-700">
-                        Data-Driven Modelling
-                    </span>
-
-                </div>
-
-
-                <div class="border-t border-gray-200 pt-5">
-
-                    <h4 class="text-sm font-bold text-gray-900 mb-3">
-                        Selected Publications
-                    </h4>
-
-
-                    <ul class="space-y-3 text-sm">
-
-
-                        <li>
-                            <a href="https://doi.org/10.1016/j.tust.2026.107719"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               class="text-emerald-800 hover:underline
-                                      font-medium leading-relaxed">
-
-                                Underground Mine Tunnel Fire Dynamics:
-                                Experimental Investigation and AI-Driven
-                                Characterization of Flame Behavior ↗
-
-                            </a>
-
-                            <p class="text-xs text-gray-500 mt-1">
-                                Tunnelling and Underground Space Technology, 2026
-                            </p>
-                        </li>
-
-
-                        <li>
-                            <a href="https://doi.org/10.1080/08916152.2021.1919243"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               class="text-emerald-800 hover:underline
-                                      font-medium leading-relaxed">
-
-                                Enhancement in Pool Boiling Heat Transfer of Ethanol
-                                and Nanofluid on a Novel Supersonic Nanoblown
-                                Nanofiber-Textured Surface ↗
-
-                            </a>
-
-                            <p class="text-xs text-gray-500 mt-1">
-                                Experimental Heat Transfer, 2022
-                            </p>
-                        </li>
-
-
-                        <li>
-                            <a href="https://doi.org/10.1088/1361-6501/ad0c2e"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               class="text-emerald-800 hover:underline
-                                      font-medium leading-relaxed">
-
-                                Advancing Occupational Health in Mining:
-                                Investigating Low-Cost Sensors for Improved
-                                Coal Dust Exposure Monitoring ↗
-
-                            </a>
-
-                            <p class="text-xs text-gray-500 mt-1">
-                                Measurement Science and Technology, 2024
-                            </p>
-                        </li>
-
-
-                    </ul>
-
-                </div>
-
-            </article>
-
-
-        </div>
-
-
-        <!-- VIEW ALL PUBLICATIONS -->
-
-        <div class="mt-10 text-center">
-
-            <p class="text-sm text-gray-600 mb-4">
-                Explore the complete publication record, including conference
-                contributions and patents.
-            </p>
-
-            <button
-                onclick="switchView('publications')"
-                class="inline-flex items-center gap-2 rounded-lg
-                       bg-[#284723] px-6 py-3 text-sm font-semibold
-                       text-white hover:bg-emerald-900 transition-colors">
-
-                View All Publications
-                <span aria-hidden="true">→</span>
-
-            </button>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- END HOME RESEARCH OVERVIEW -->
+            </section>
+            <!-- END HOME RESEARCH SNAPSHOT -->
 </div><!-- /view-home -->
 
         <!-- VIEW 2: TEAM PAGE -->
