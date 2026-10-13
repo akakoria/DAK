@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Dr. Ashish Kakoria">
+    <title>Kakoria-NanoTech Lab @ Chitkara University</title>
+    
+    <!-- Google Fonts for handwriting effect & modern typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS for utility styling and responsive components -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandGreen: '#284723',
+                        brandAccent: '#0056b3',
+                        darkBg: '#111111'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                        handwriting: ['Caveat', 'cursive']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #f8f8f8;
+            color: #2c2c2c;
+            overflow-x: hidden;
+        }
+
+        .hero-title {
+            font-family: 'Caveat', cursive;
+            color: #284723;
+            line-height: 1.25;
+        }
+
+        .modal-fade {
+            transition: opacity 0.2s ease-in-out;
+        }
+
+        .nav-link-active {
+            color: #000000 !important;
+            font-weight: 600 !important;
+            border-bottom: 2px solid #000000;
+            padding-bottom: 2px;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased">
+
+    <!-- Minimal Navigation Bar -->
+    <header class="bg-white sticky top-0 z-50 border-b border-gray-200 shadow-sm">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="switchView('home')">
+                <div class="w-10 h-10 rounded-lg bg-[#284723] text-white flex items-center justify-center font-bold text-xl shadow-sm">
+                    K
+                </div>
+                <div class="text-base sm:text-lg font-bold tracking-tight text-gray-900">
+                    Kakoria-NanoTech Lab <span class="text-gray-400 font-normal hidden sm:inline">@ Chitkara University</span>
+                </div>
+            </div>
+
+            <!-- Nav Links -->
+            <div class="flex items-center space-x-6">
+                <ul class="hidden md:flex space-x-6 text-sm font-medium">
+                    <li><button id="nav-home" onclick="switchView('home')" class="nav-link-active text-gray-600 hover:text-black transition-colors">Home</button></li>
+                    <li><button id="nav-research" onclick="switchView('research')" class="text-gray-600 hover:text-black transition-colors">Research</button></li>
+                    <li><button id="nav-publications" onclick="switchView('publications')" class="text-gray-600 hover:text-black transition-colors">Publications</button></li>
+                    <li><button id="nav-team" onclick="switchView('team')" class="text-gray-600 hover:text-black transition-colors">Team</button></li>
+                    <li><button id="nav-openings" onclick="switchView('openings')" class="text-gray-600 hover:text-black transition-colors">Openings</button></li>
+                    <li><button id="nav-contact" onclick="switchView('contact')" class="text-gray-600 hover:text-black transition-colors">Contact</button></li>
+                </ul>
+
+                <!-- Mobile Menu Button & Search -->
+                <div class="flex items-center space-x-3">
+                    <button onclick="openSearchModal()" class="p-2 rounded-full hover:bg-gray-100 text-gray-700 transition-colors" title="Search Site">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT VIEW ROUTER -->
+    <main class="flex-grow">
+        
+        <!-- VIEW 1: HOME -->
+        <div id="view-home" class="block">
+            <!-- Hero Section -->
+            <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <!-- Left Hand-written Title -->
+                <div class="lg:col-span-5 space-y-4 text-center lg:text-left">
+                    <h1 class="hero-title text-4xl sm:text-5xl lg:text-6xl font-bold">
+                        Advanced Materials for<br>
+                        Energy, Environment &<br>
+                        Circular Economy Lab
+                    </h1>
+                    <p class="text-gray-600 text-base sm:text-lg max-w-lg mx-auto lg:mx-0 pt-2 leading-relaxed">
+                        Pioneering structured polymeric and nanostructured materials for water purification, energy storage safety, and circular resource recovery.
+                    </p>
+                    <div class="pt-4 flex flex-wrap gap-3 justify-center lg:justify-start">
+                        <button onclick="switchView('team')" class="px-6 py-2.5 rounded-lg bg-[#284723] text-white font-medium hover:bg-emerald-900 transition-all shadow-sm">
+                            Meet PI & Team
+                        </button>
+                        <button onclick="switchView('research')" class="px-6 py-2.5 rounded-lg border border-gray-300 text-gray-700 font-medium hover:bg-gray-100 transition-all">
+                            Research Areas
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Infographic Image: coverpage_2.jpg -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white p-2 rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
+                        <img 
+                            src="coverpage.jpeg" 
+                            onerror="this.onerror=null; this.src='coverpage.jpg';" 
+                            alt="Advanced Materials for a Cleaner, Safer and More Sustainable Future - Kakoria-NanoTech Lab Infographic" 
+                            class="w-full h-auto object-contain rounded-xl"
+                        >
+                    </div>
+                </div>
+            </section>
+
+            <!-- Detailed Section Below Hero -->
+            <section class="bg-white py-12 sm:py-16 border-t border-gray-200">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mb-4">Welcome to Kakoria-NanoTech Lab</h2>
+                    <p class="text-gray-600 text-base leading-relaxed mb-8">
+                        We develop structured polymeric and nanostructured materials for applications in environmental stewardship, energy safety, and sustainable resource recovery. Our core research vectors unite scalable materials manufacturing with computational modeling and state-of-the-art characterization.
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        
+                        <!-- Core Pillar 1 -->
+                        <div class="p-6 rounded-xl bg-gray-50 border border-gray-100 hover:border-emerald-200 transition-all">
+                            <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold mb-4">
+                                🌱
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Environmental Remediation & Water Stewardship</h3>
+                            <ul class="text-xs sm:text-sm text-gray-600 space-y-1.5">
+                                <li>&bull; Acid mist mitigation in copper electrowinning</li>
+                                <li>&bull; Heavy metal & acid mine drainage remediation</li>
+                                <li>&bull; Tertiary wastewater treatment & reuse</li>
+                                <li>&bull; Air & water purification (PFAS, VOCs, PM)</li>
+                            </ul>
+                        </div>
+
+                        <!-- Core Pillar 2 -->
+                        <div class="p-6 rounded-xl bg-gray-50 border border-gray-100 hover:border-amber-200 transition-all">
+                            <div class="w-10 h-10 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center font-bold mb-4">
+                                ⚡
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Energy Storage Safety</h3>
+                            <ul class="text-xs sm:text-sm text-gray-600 space-y-1.5">
+                                <li>&bull; EV battery thermal runaway diagnostics</li>
+                                <li>&bull; Thermal, mechanical & chemical fire studies</li>
+                                <li>&bull; Off-gas analysis (FTIR) & gas detection</li>
+                                <li>&bull; Flame retardant & fire resistant materials</li>
+                            </ul>
+                        </div>
+
+                        <!-- Core Pillar 3 -->
+                        <div class="p-6 rounded-xl bg-gray-50 border border-gray-100 hover:border-blue-200 transition-all">
+                            <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-800 flex items-center justify-center font-bold mb-4">
+                                ♻️
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Resource Recovery & Circular Economy</h3>
+                            <ul class="text-xs sm:text-sm text-gray-600 space-y-1.5">
+                                <li>&bull; Hydrometallurgy & copper recovery</li>
+                                <li>&bull; Spent Lithium-ion battery material recycling</li>
+                                <li>&bull; Repurposing plastic waste into nanofibers</li>
+                                <li>&bull; Multiphase transport & process optimization</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- VIEW 2: TEAM PAGE -->
+        <div id="view-team" class="hidden">
+            <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+                <div class="bg-white p-6 sm:p-10 rounded-2xl shadow-sm border border-gray-200">
+                    <div class="flex flex-col md:flex-row items-center md:items-start gap-8 pb-8 border-b border-gray-200">
+                        <img 
+                            src="IMG_6725.jpeg" 
+                            onerror="this.onerror=null; this.src='https://placehold.co/200x200/284723/ffffff?text=Dr.+Ashish+Kakoria';" 
+                            alt="Dr. Ashish Kakoria" 
+                            class="w-44 h-44 rounded-2xl object-cover shadow-md border-2 border-emerald-900"
+                        >
+                        <div class="text-center md:text-left space-y-2">
+                            <h1 class="text-3xl font-bold text-gray-900">Dr. Ashish Kakoria</h1>
+                            <p class="text-[#284723] font-semibold text-lg">Lead Principal Investigator / Lead Scientist</p>
+                            <p class="text-gray-500 text-sm">Postdoctoral Researcher (Missouri University of Science & Technology, USA)</p>
+                            <div class="pt-3 flex flex-wrap gap-2 justify-center md:justify-start">
+                                <a href="https://scholar.google.com/citations?user=U6t-UasAAAAJ" target="_blank" class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 text-gray-800 rounded-md text-xs font-medium transition-colors">Google Scholar</a>
+                                <a href="https://orcid.org/0000-0002-1236-6232" target="_blank" class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 text-gray-800 rounded-md text-xs font-medium transition-colors">ORCID</a>
+                                <a href="https://www.linkedin.com/in/ashishkakoria-73136161/" target="_blank" class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 text-gray-800 rounded-md text-xs font-medium transition-colors">LinkedIn</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="py-6 space-y-8 text-gray-700 text-sm sm:text-base leading-relaxed">
+                        <div>
+                            <h2 class="text-xl font-bold text-gray-900 mb-3 border-b pb-2">About PI</h2>
+                            <p>
+                                Dr. Ashish Kakoria leads research at the intersection of functional fiber manufacturing, polymer science, energy safety, and environmental technology. His research portfolio emphasizes scalable nanomanufacturing strategies including supersonic nanoblowing, solution blowing, and electrospinning.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h2 class="text-xl font-bold text-gray-900 mb-3 border-b pb-2">Work Experience & Education</h2>
+                            <div class="space-y-3">
+                                <div>
+                                    <h3 class="font-semibold text-gray-900">Postdoctoral Research Associate</h3>
+                                    <p class="text-xs text-gray-500">Missouri University of Science and Technology, USA (2023 – Present)</p>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-900">Postdoctoral Fellow</h3>
+                                    <p class="text-xs text-gray-500">Indian Institute of Technology, Delhi (2022 – 2023)</p>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-900">Ph.D. in Chemical / Materials Engineering</h3>
+                                    <p class="text-xs text-gray-500">Indian Institute of Technology, Mandi (2017 – 2022)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="view-research" class="hidden py-16 text-center">
+            <h2 class="text-2xl font-bold text-gray-900 mb-2">Research Focus Areas</h2>
+            <p class="text-gray-600">Refer to our home page infographic (`coverpage_2.jpg`) for details on core capabilities.</p>
+        </div>
+
+        <div id="view-publications" class="hidden py-16 text-center">
+            <h2 class="text-2xl font-bold text-gray-900 mb-2">Selected Publications</h2>
+            <p class="text-gray-600">Please visit <a href="https://scholar.google.com/citations?user=U6t-UasAAAAJ" target="_blank" class="text-emerald-800 underline">Google Scholar</a> for full list of publications.</p>
+        </div>
+
+        <div id="view-openings" class="hidden py-16 text-center">
+            <h2 class="text-2xl font-bold text-gray-900 mb-2">Openings</h2>
+            <p class="text-gray-600">Motivated PhD and Master students interested in nanofiber manufacturing and energy safety may reach out via email.</p>
+        </div>
+
+        <div id="view-contact" class="hidden py-16 text-center">
+            <h2 class="text-2xl font-bold text-gray-900 mb-2">Contact Us</h2>
+            <p class="text-gray-600">Email: akakoria@gmail.com | Kakoria-NanoTech Lab @ Chitkara University</p>
+        </div>
+
+    </main>
+
+    <!-- Search Modal -->
+    <div id="search-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-start justify-center pt-20 px-4 hidden modal-fade">
+        <div class="bg-white w-full max-w-xl rounded-xl shadow-2xl p-6 relative">
+            <button onclick="closeSearchModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+            <h3 class="text-lg font-bold text-gray-900 mb-3">Search Lab Information</h3>
+            <input type="text" id="search-input" onkeyup="handleSearch()" placeholder="Search keywords like 'lithium', 'copper', 'membrane'..." class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#284723]">
+            <div id="search-results" class="mt-4 max-h-60 overflow-y-auto space-y-2 text-sm text-gray-600">
+                <p class="text-gray-400 italic">Type search terms above...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 py-6 text-center text-xs text-gray-500">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>&copy; 2026 Dr. Ashish Kakoria | Kakoria-NanoTech Lab @ Chitkara University</p>
+        </div>
+    </footer>
+
+    <script>
+        function switchView(viewName) {
+            const views = ['home', 'team', 'research', 'publications', 'openings', 'contact'];
+            views.forEach(v => {
+                const el = document.getElementById(`view-${v}`);
+                const nav = document.getElementById(`nav-${v}`);
+                if (el) el.classList.add('hidden');
+                if (nav) nav.classList.remove('nav-link-active');
+            });
+
+            const activeEl = document.getElementById(`view-${viewName}`);
+            const activeNav = document.getElementById(`nav-${viewName}`);
+            if (activeEl) activeEl.classList.remove('hidden');
+            if (activeNav) activeNav.classList.add('nav-link-active');
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function openSearchModal() {
+            document.getElementById('search-modal').classList.remove('hidden');
+            document.getElementById('search-input').focus();
+        }
+
+        function closeSearchModal() {
+            document.getElementById('search-modal').classList.add('hidden');
+        }
+
+        function handleSearch() {
+            const query = document.getElementById('search-input').value.toLowerCase();
+            const results = document.getElementById('search-results');
+            if (query.length < 2) {
+                results.innerHTML = '<p class="text-gray-400 italic">Type search terms above...</p>';
+                return;
+            }
+
+            const items = [
+                "Environmental Remediation & Water Stewardship",
+                "Acid mist mitigation in copper electrowinning",
+                "Energy Storage Safety - EV battery thermal runaway",
+                "Resource Recovery & Spent Lithium-ion recycling",
+                "Advanced Characterisation (SEM, XRD, XPS, FTIR)",
+                "Data-Driven Materials Discovery & Machine Learning"
+            ];
+
+            const matches = items.filter(item => item.toLowerCase().includes(query));
+            if (matches.length > 0) {
+                results.innerHTML = matches.map(m => `<div class="p-2 hover:bg-gray-100 rounded cursor-pointer text-[#284723] font-medium" onclick="closeSearchModal(); switchView('home');">${m}</div>`).join('');
+            } else {
+                results.innerHTML = '<p class="text-gray-500">No matching results found.</p>';
+            }
+        }
+    </script>
+</body>
+</html>
