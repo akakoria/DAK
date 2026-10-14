@@ -1,40 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Dr. Ashish Kakoria">
-    <title>KOSMOS Lab @ Chitkara University</title>
-    
-    <!-- Google Fonts for handwriting effect & modern typography -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+function switchView(viewName) {
+    const views = [
+        'home',
+        'team',
+        'research',
+        'publications',
+        'openings',
+        'contact'
+    ];
 
-    <!-- Tailwind CSS for utility styling and responsive components -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brandGreen: '#284723',
-                        brandAccent: '#0056b3',
-                        darkBg: '#111111'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-                        handwriting: ['Caveat', 'cursive']
-                    }
-                }
-            }
+    if (!views.includes(viewName)) {
+        console.warn('Unknown view:', viewName);
+        return;
+    }
+
+    views.forEach(function (view) {
+        const section = document.getElementById('view-' + view);
+        const navButton = document.getElementById('nav-' + view);
+
+        if (section) {
+            section.style.display =
+                (view === viewName) ? 'block' : 'none';
+
+            section.setAttribute(
+                'aria-hidden',
+                view === viewName ? 'false' : 'true'
+            );
         }
-    </script>
 
-    <style>
-        body {
-            background-color: #f8f8f8;
-            color: #2c2c2c;
+        if (navButton) {
+            navButton.classList.toggle(
+                'nav-link-active',
+                view === viewName
+            );
+
+            navButton.setAttribute(
+                'aria-current',
+                view === viewName ? 'page' : 'false'
+            );
+        }
+    });
+
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    switchView('home');
+});            color: #2c2c2c;
             overflow-x: hidden;
         }
 
