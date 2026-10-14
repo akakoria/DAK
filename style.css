@@ -20,7 +20,11 @@ header {
     top: 0;
     z-index: 1000;
 }
-
+/* KOSMOS Lab branding: bold red */
+.kosmos-brand {
+    color: #D00000 !important;
+    font-weight: 800 !important;
+}
 .navbar {
     display: flex;
     justify-content: space-between;
